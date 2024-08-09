@@ -87,14 +87,13 @@ const GenerateImage = ({
                   style={{
                     display: "flex",
                     flexDirection: "column",
-                    textAlign: "end",
-                    margin: "0px 30px",
+                    textAlign: "start",
+                    marginRight: 50,
                   }}
                 >
                   <span
                     style={{
-                      fontSize: 10,
-                      marginRight: 30,
+                      fontSize: 13,
                       fontWeight: "bold",
                       fontFamily: "sans-serif",
                       color: "#000",
