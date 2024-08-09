@@ -39,11 +39,11 @@ const GenerateImage = ({
   return (
     <div>
       <div
-        style={{ padding: 20, border: "2px solid yellow", background: "red" }}
+        style={{ padding: 20, border: "2px solid #121212", background: "#d5dff0" }}
         id="image-content"
       >
         <div
-          style={{ padding: 20, border: "2px solid red", background: "pink" }}
+          style={{ padding: 20, border: "2px solid #eee7e7", background: "#cfd4de" }}
         >
           <div style={{ border: "2px solid black", background: "#fff" }}>
             <header>
