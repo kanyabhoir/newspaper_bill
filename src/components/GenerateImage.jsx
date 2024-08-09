@@ -39,11 +39,19 @@ const GenerateImage = ({
   return (
     <div>
       <div
-        style={{ padding: 10, border: "2px solid #121212", background: "#d5dff0" }}
+        style={{
+          padding: 10,
+          border: "2px solid rgb(212 208 208)",
+          background: "#d5dff0",
+        }}
         id="image-content"
       >
         <div
-          style={{ padding: 10, border: "2px solid #eee7e7", background: "#cfd4de" }}
+          style={{
+            padding: 10,
+            border: "2px solid rgb(212 208 208)",
+            background: "#cfd4de",
+          }}
         >
           <div style={{ border: "2px solid black", background: "#fff" }}>
             <header>
@@ -66,9 +74,9 @@ const GenerateImage = ({
                 </span>
                 <span
                   style={{
-                    fontFamily: "sans-serif",
-                    fontSize: 30,
-                    fontWeight: "700",
+                    fontFamily: "math",
+                    fontSize: 40,
+                    fontWeight: 600,
                     color: "#000",
                     textTransform: "uppercase",
                   }}
@@ -399,10 +407,10 @@ const GenerateImage = ({
               </div>
             </div>
           </div>
-        </div>
-        <div style={{ background: "#fff" }}>
-          <b>Note :- </b>
-          <span>Please send the screen shot on Whatsapp</span>
+          <div style={{ background: "#fff" }}>
+            <b>Note :- </b>
+            <span>"Please send a screenshot of the payment proof via WhatsApp."</span>
+          </div>
         </div>
       </div>
       <div>
