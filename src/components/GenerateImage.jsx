@@ -171,7 +171,7 @@ const GenerateImage = ({
                 display: "flex",
               }}
             >
-              <div style={{ width: "100%" }}>
+              <div style={{ width: "100%",textAlign:"start",paddingLeft: 20 }}>
                 <span
                   style={{
                     fontSize: 16,
@@ -184,7 +184,7 @@ const GenerateImage = ({
                   Month - {month}
                 </span>
               </div>
-              <div style={{ width: "100%" }}>
+              <div style={{ width: "100%",textAlign:"start",paddingLeft: 105 }}>
                 <span
                   style={{
                     fontSize: 16,
