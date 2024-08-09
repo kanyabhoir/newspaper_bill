@@ -39,10 +39,12 @@ const GenerateImage = ({
   return (
     <div>
       <div
-        style={{ padding: 20, border: "2px solid black" ,background: "#fff"}}
+        style={{ padding: 20, border: "2px solid black", background: "#fff" }}
         id="image-content"
       >
-        <div style={{ padding: 20, border: "2px solid black" }}>
+        <div
+          style={{ padding: 20, border: "2px solid black", background: "#fff" }}
+        >
           <div style={{ border: "2px solid black", background: "#fff" }}>
             <header>
               <div
@@ -398,15 +400,15 @@ const GenerateImage = ({
               </div>
             </div>
           </div>
-          <div style={{ background: "#fff" }}>
-            <b>Note :- </b>
-            <span>Please send the screen shot on Whatsapp</span>
-          </div>
         </div>
-        <div>
-          <button onClick={handleDownloadPng}>Download as PNG</button>
-          <button onClick={handleDownloadJpeg}>Download as JPEG</button>
+        <div style={{ background: "#fff" }}>
+          <b>Note :- </b>
+          <span>Please send the screen shot on Whatsapp</span>
         </div>
+      </div>
+      <div>
+        <button onClick={handleDownloadPng}>Download as PNG</button>
+        <button onClick={handleDownloadJpeg}>Download as JPEG</button>
       </div>
     </div>
   );
