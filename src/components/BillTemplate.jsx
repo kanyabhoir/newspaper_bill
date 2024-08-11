@@ -32,6 +32,37 @@ const newspaperOptions = [
   "H.T.",
   "सकाळ",
   "F. Press",
+  "Times of India",
+  "Economic Times",
+  "महाराष्ट्र टाइम्स",
+  "लोकसत्ता",
+  "मल्ला",
+  "नवभारत टाइम्स",
+  "प्रत:काळ",
+  "प्रत्यक्",
+  "Indian Express",
+  "Wealth",
+  "मुंबई चौफेर",
+  "ठाणे वैभव",
+  "संध्यानद",
+  "दिनकरनं",
+  "प्रत्यक्ष",
+  "पताकाळ",
+  "दिव्य भास्कर",
+  "गुजरात समाचार",
+  "दैनंदिन भास्कर",
+  "Thanthi",
+  "Manorama",
+  "Mathrubhumi",
+  "Uday Vani",
+  "K. Mala",
+  "G. Mid day",
+  "E. Mid day",
+  "B. Standard",
+  "B. Line",
+  "H. Times",
+  "Times",
+  "E. Times",
 ].map((name) => ({ label: name, value: name }));
 
 const BillTemplate = () => {
@@ -63,8 +94,8 @@ const BillTemplate = () => {
   };
 
   const formattedDate = billData.date
-  ? format(new Date(billData.date), "dd/MM/yyyy")
-  : "";
+    ? format(new Date(billData.date), "dd/MM/yyyy")
+    : "";
 
   const handleAmountChange = (e) => {
     setAmount(e.target.value);
@@ -196,8 +227,17 @@ const BillTemplate = () => {
             <div className="row">
               <div className="column">
                 <label>Google Pay: </label>
-               
-                <span style={{border:"1px solid #ccc",padding:5,borderRadius:5,background:"#fff"}}>8793274753</span>
+
+                <span
+                  style={{
+                    border: "1px solid #ccc",
+                    padding: 5,
+                    borderRadius: 5,
+                    background: "#fff",
+                  }}
+                >
+                  8793274753
+                </span>
               </div>
             </div>
 
@@ -216,7 +256,7 @@ const BillTemplate = () => {
             </>
           )}
         </div>
-        <div style={{marginTop:20}}>
+        <div style={{ marginTop: 20 }}>
           <GenerateImage
             name={billData.name}
             month={billData.month}
