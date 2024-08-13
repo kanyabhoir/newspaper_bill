@@ -4,7 +4,6 @@ import { WhatsappShareButton, WhatsappIcon } from "react-share";
 import GenerateImage from "./GenerateImage";
 import Select from "react-select";
 import { format } from "date-fns";
-import AddNewspaper from "./AddNewspaper";
 
 const newspaperOptions = [
   "नवभारत",
@@ -122,7 +121,6 @@ const BillTemplate = () => {
       <div>
         <div className="main-container">
           <h1>Vijay NewsPaper Agency</h1>
-          <AddNewspaper/>
           <form>
             <div className="row">
               <div className="column">
