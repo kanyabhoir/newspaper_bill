@@ -4,53 +4,37 @@ import { WhatsappShareButton, WhatsappIcon } from "react-share";
 import GenerateImage from "./GenerateImage";
 import Select from "react-select";
 import { format } from "date-fns";
+import AddNewspaper from "./AddNewspaper";
 
 const newspaperOptions = [
   "नवभारत",
-  "संदयानंद",
-  "G.M.D.",
-  "E.M.D.",
+  "संध्यानंद",
   "सामना",
-  "आनंद",
-  "यंती",
-  "मनोरमा",
+  "आ.आनंद",
   "पुढारी",
-  "मातृभूमि",
   "The Hindu",
   "साक्षी",
   "A.B.P.",
-  "B.Line",
-  "B.Std",
-  "दिनकरन",
-  "दिव्या भास्कर",
+  "दिव्य भास्कर",
   "मु. समाचार",
   "तरुण भारत",
-  "जन्मभूमी",
-  "उदयवाणी",
   "दैनिक भास्कर",
   "लोकमत",
   "H.T.",
   "सकाळ",
   "F. Press",
-  "Times of India",
-  "Economic Times",
+  "Eco",
   "महाराष्ट्र टाइम्स",
   "लोकसत्ता",
-  "मल्ला",
   "नवभारत टाइम्स",
   "प्रत:काळ",
-  "प्रत्यक्",
   "Indian Express",
   "Wealth",
   "मुंबई चौफेर",
   "ठाणे वैभव",
-  "संध्यानद",
   "दिनकरनं",
   "प्रत्यक्ष",
-  "पताकाळ",
-  "दिव्य भास्कर",
   "गुजरात समाचार",
-  "दैनंदिन भास्कर",
   "Thanthi",
   "Manorama",
   "Mathrubhumi",
@@ -60,9 +44,7 @@ const newspaperOptions = [
   "E. Mid day",
   "B. Standard",
   "B. Line",
-  "H. Times",
   "Times",
-  "E. Times",
 ].map((name) => ({ label: name, value: name }));
 
 const BillTemplate = () => {
@@ -140,6 +122,7 @@ const BillTemplate = () => {
       <div>
         <div className="main-container">
           <h1>Vijay NewsPaper Agency</h1>
+          <AddNewspaper/>
           <form>
             <div className="row">
               <div className="column">
