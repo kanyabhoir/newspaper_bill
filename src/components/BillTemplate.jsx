@@ -4,6 +4,7 @@ import { WhatsappShareButton, WhatsappIcon } from "react-share";
 import GenerateImage from "./GenerateImage";
 import Select from "react-select";
 import { format } from "date-fns";
+import ReloadButton from "./ReloadButton";
 
 const newspaperOptions = [
   "नवभारत",
@@ -225,6 +226,7 @@ const BillTemplate = () => {
             <button type="button" onClick={handleSubmit}>
               Submit
             </button>
+              <ReloadButton/>
           </form>
 
           {showSummary && (
