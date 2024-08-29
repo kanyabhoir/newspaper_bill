@@ -12,6 +12,7 @@ const newspaperOptions = [
   "सामना",
   "आ.आनंद",
   "पुढारी",
+  "साप्ताहिक",
   "The Hindu",
   "साक्षी",
   "A.B.P.",
