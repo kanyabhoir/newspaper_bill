@@ -25,6 +25,7 @@ const newspaperOptions = [
   "सकाळ",
   "F. Press",
   "Eco",
+  "Magazine",
   "महाराष्ट्र टाइम्स",
   "लोकसत्ता",
   "नवभारत टाइम्स",
