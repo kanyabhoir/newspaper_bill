@@ -30,6 +30,7 @@ const newspaperOptions = [
   "लोकसत्ता",
   "नवभारत टाइम्स",
   "प्रत:काळ",
+  "finance",
   "Indian Express",
   "Wealth",
   "मुंबई चौफेर",
@@ -228,7 +229,7 @@ const BillTemplate = () => {
             <button type="button" onClick={handleSubmit}>
               Submit
             </button>
-              <ReloadButton/>
+            <ReloadButton />
           </form>
 
           {showSummary && (
