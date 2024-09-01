@@ -81,7 +81,7 @@ const GenerateImage = ({
                     textTransform: "uppercase",
                   }}
                 >
-                  Vijay NewsPepar Agency
+                  Vijay NewsPaper Agency
                 </span>
               </div>
               <div
