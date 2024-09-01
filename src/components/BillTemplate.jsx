@@ -26,6 +26,7 @@ const newspaperOptions = [
   "F. Press",
   "Eco",
   "Magazine",
+  "Patrika",
   "महाराष्ट्र टाइम्स",
   "लोकसत्ता",
   "नवभारत टाइम्स",
