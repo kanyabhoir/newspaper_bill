@@ -126,7 +126,7 @@ const BillTemplate = () => {
     <>
       <div>
         <div className="main-container">
-          <h1>Vijay NewsPaper Agency</h1>
+          <h1>Vijay News Paper Agency</h1>
           <form>
             <div className="row">
               <div className="column">

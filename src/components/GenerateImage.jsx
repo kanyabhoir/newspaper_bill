@@ -1,4 +1,5 @@
 import { toJpeg, toPng } from "html-to-image";
+import GooglePay from "./GooglePay";
 
 const GenerateImage = ({
   name,
@@ -91,46 +92,56 @@ const GenerateImage = ({
                   justifyContent: "space-between",
                 }}
               >
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    textAlign: "start",
-                    marginRight: 50,
-                  }}
-                >
-                  <span
-                    style={{
-                      fontSize: 13,
-                      fontWeight: "bold",
-                      fontFamily: "sans-serif",
-                      color: "#000",
-                    }}
-                  >
-                    Contact No.{" "}
-                  </span>
-                  <span
-                    style={{
-                      fontSize: 15,
-                      fontWeight: "bold",
-                      color: "#000",
-                      marginTop: -5,
-                    }}
-                  >
-                    8850427013
-                  </span>
-                  <span
-                    style={{
-                      fontSize: 15,
-                      fontWeight: "700",
-                      color: "#000",
-                      marginTop: -5,
-                    }}
-                  >
-                    7262889526
-                  </span>
-                </div>
+                <div style={{
+                      display: "flex",
+                      flexDirection: "row",
+                      textAlign: "start",
+                      gap:10
+                    }}>
+                  <div>
+                    <GooglePay/>
+                  </div>
 
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      textAlign: "start",
+                      marginRight: 50,
+                    }}
+                  >
+                    <span
+                      style={{
+                        fontSize: 13,
+                        fontWeight: "bold",
+                        fontFamily: "sans-serif",
+                        color: "#000",
+                      }}
+                    >
+                      Contact No.{" "}
+                    </span>
+                    <span
+                      style={{
+                        fontSize: 15,
+                        fontWeight: "bold",
+                        color: "#000",
+                        marginTop: -5,
+                      }}
+                    >
+                      8850427013
+                    </span>
+                    <span
+                      style={{
+                        fontSize: 15,
+                        fontWeight: "700",
+                        color: "#000",
+                        marginTop: -5,
+                      }}
+                    >
+                      7262889526
+                    </span>
+                  </div>
+                </div>
                 <div
                   style={{
                     display: "flex",
@@ -171,7 +182,9 @@ const GenerateImage = ({
                 display: "flex",
               }}
             >
-              <div style={{ width: "100%",textAlign:"start",paddingLeft: 20 }}>
+              <div
+                style={{ width: "100%", textAlign: "start", paddingLeft: 20 }}
+              >
                 <span
                   style={{
                     fontSize: 16,
@@ -184,7 +197,9 @@ const GenerateImage = ({
                   Month - {month}
                 </span>
               </div>
-              <div style={{ width: "100%",textAlign:"start",paddingLeft: 105 }}>
+              <div
+                style={{ width: "100%", textAlign: "start", paddingLeft: 105 }}
+              >
                 <span
                   style={{
                     fontSize: 16,
@@ -409,7 +424,9 @@ const GenerateImage = ({
           </div>
           <div style={{ background: "#fff" }}>
             <b>Note :- </b>
-            <span>"Please send a screenshot of the payment proof via WhatsApp."</span>
+            <span>
+              "Please send a screenshot of the payment proof via WhatsApp."
+            </span>
           </div>
         </div>
       </div>
