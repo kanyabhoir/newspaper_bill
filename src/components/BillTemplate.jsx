@@ -32,6 +32,7 @@ const newspaperOptions = [
   "लोकसत्ता",
   "नवभारत टाइम्स",
   "प्रत:काळ",
+  "Mint",
   "finance",
   "Indian Express",
   "Wealth",
