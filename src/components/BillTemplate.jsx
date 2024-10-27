@@ -10,6 +10,7 @@ const newspaperOptions = [
   "नवभारत",
   "संध्यानंद",
   "सामना",
+  "Diwali",
   "आ.आनंद",
   "पुढारी",
   "साप्ताहिक",
@@ -61,6 +62,19 @@ const BillTemplate = () => {
 
   const handleNewspaperChange = (selectedOptions) => {
     setSelectedNewspapers(selectedOptions || []);
+  };
+
+  const customStyles = {
+    option: (provided, state) => ({
+      ...provided,
+      fontWeight: state.data.value === "Diwali" ? "bold" : "normal",
+      color: state.data.value === "Diwali" ? "red" : "black",
+    }),
+    multiValueLabel: (provided, state) => ({
+      ...provided,
+      fontWeight: state.data.value === "Diwali" ? "bold" : "normal",
+      color: state.data.value === "Diwali" ? "red" : "black",
+    }),
   };
 
   const [billData, setBillData] = useState({
@@ -148,6 +162,7 @@ const BillTemplate = () => {
                   value={selectedNewspapers}
                   onChange={handleNewspaperChange}
                   placeholder="Select Newspapers"
+                  styles={customStyles}
                 />
               </div>
             </div>

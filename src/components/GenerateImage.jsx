@@ -93,11 +93,11 @@ const GenerateImage = ({
                 }}
               >
                 <div style={{
-                      display: "flex",
-                      flexDirection: "row",
-                      textAlign: "start",
-                      gap:10
-                    }}>
+                    display: "flex",
+                    flexDirection: "row",
+                    textAlign: "start",
+                    gap:10
+                  }}>
                   <div>
                     <GooglePay/>
                   </div>
@@ -173,6 +173,12 @@ const GenerateImage = ({
                     {name}{" "}
                   </div>
                 </div>
+              </div>
+              <div>
+                <div className="banner">🎆 Happy Diwali! 🎇</div>
+                <span className="message">
+                  May this Diwali bring peace and prosperity to your life!
+                </span>
               </div>
               <hr style={{ border: "1px solid black" }} />
             </header>
