@@ -1,5 +1,8 @@
+/* eslint-disable react/prop-types */
 import { toJpeg, toPng } from "html-to-image";
 import GooglePay from "./GooglePay";
+import PopupModal from "./PopupModal";
+import { useState } from "react";
 
 const GenerateImage = ({
   name,
@@ -10,6 +13,7 @@ const GenerateImage = ({
   total,
   selectedNewspapers,
 }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const handleDownloadPng = () => {
     const node = document.getElementById("image-content");
     toPng(node)
@@ -36,6 +40,14 @@ const GenerateImage = ({
       .catch((error) => {
         console.error("Oops, something went wrong!", error);
       });
+  };
+
+  const handleShowModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
   };
   return (
     <div>
@@ -92,14 +104,16 @@ const GenerateImage = ({
                   justifyContent: "space-between",
                 }}
               >
-                <div style={{
+                <div
+                  style={{
                     display: "flex",
                     flexDirection: "row",
                     textAlign: "start",
-                    gap:10
-                  }}>
+                    gap: 10,
+                  }}
+                >
                   <div>
-                    <GooglePay/>
+                    <GooglePay />
                   </div>
 
                   <div
@@ -175,10 +189,27 @@ const GenerateImage = ({
                 </div>
               </div>
               <div>
-                <div className="banner">🎆 Happy Diwali! 🎇</div>
-                <span className="message">
-                  May this Diwali bring peace and prosperity to your life!
-                </span>
+                <section
+                  style={{
+                    backgroundColor: "#0056b3",
+                    color: "#fff",
+                    padding: "1px 10px",
+                  }}
+                >
+                  <h3>Our new service is live! Book a ride now!</h3>
+
+                  <button
+                    style={{marginTop:-20,marginBottom:10}}
+                    onClick={handleShowModal}
+                  >
+                    Announcement
+                  </button>
+                </section>
+
+                <PopupModal
+                  isOpen={isModalOpen}
+                  closeModal={handleCloseModal}
+                />
               </div>
               <hr style={{ border: "1px solid black" }} />
             </header>
