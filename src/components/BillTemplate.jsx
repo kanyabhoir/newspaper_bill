@@ -23,6 +23,7 @@ const newspaperOptions = [
   "लोकमत",
   "H.T.",
   "सकाळ",
+  "delivery bill",
   "F. Press",
   "Eco",
   "Magazine",

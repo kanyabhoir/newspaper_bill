@@ -42,10 +42,6 @@ const GenerateImage = ({
       });
   };
 
-  const handleShowModal = () => {
-    setIsModalOpen(true);
-  };
-
   const handleCloseModal = () => {
     setIsModalOpen(false);
   };
@@ -197,13 +193,6 @@ const GenerateImage = ({
                   }}
                 >
                   <h3>Our new service is live! Book a ride now!</h3>
-
-                  <button
-                    style={{marginTop:-20,marginBottom:10}}
-                    onClick={handleShowModal}
-                  >
-                    Announcement
-                  </button>
                 </section>
 
                 <PopupModal
