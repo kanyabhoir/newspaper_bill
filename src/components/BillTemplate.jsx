@@ -15,6 +15,8 @@ const newspaperOptions = [
   "साप्ताहिक",
   "The Hindu",
   "साक्षी",
+  "नवाकाळ",
+  "Mirror",
   "A.B.P.",
   "दिव्य भास्कर",
   "मु. समाचार",
@@ -128,7 +130,7 @@ const BillTemplate = () => {
     <>
       <div>
         <div className="main-container">
-          <h1>Vijay News Paper Agency</h1>
+          <h1 style={{ color: "#000000" }}>Vijay News Paper Agency</h1>
           <form>
             <div className="row">
               <div className="column">
@@ -149,6 +151,35 @@ const BillTemplate = () => {
                   value={selectedNewspapers}
                   onChange={handleNewspaperChange}
                   placeholder="Select Newspapers"
+                  styles={{
+                    control: (base) => ({
+                      ...base,
+                      backgroundColor: "white",
+                      color: "black",
+                      borderColor: "#999",
+                    }),
+                    option: (base, state) => ({
+                      ...base,
+                      backgroundColor: state.isFocused ? "#e6f0ff" : "white",
+                      color: "black",
+                    }),
+                    menu: (base) => ({
+                      ...base,
+                      backgroundColor: "white",
+                    }),
+                    placeholder: (base) => ({
+                      ...base,
+                      color: "#888",
+                    }),
+                    singleValue: (base) => ({
+                      ...base,
+                      color: "black",
+                    }),
+                    multiValueLabel: (base) => ({
+                      ...base,
+                      color: "black",
+                    }),
+                  }}
                 />
               </div>
             </div>
@@ -230,7 +261,25 @@ const BillTemplate = () => {
               </div>
             </div>
 
-            <button type="button" onClick={handleSubmit}>
+            <button
+              type="button"
+              onClick={handleSubmit}
+              style={{
+                backgroundColor: "#6c63ff",
+                color: "white",
+                border: "none",
+                padding: "10px 20px",
+                fontSize: "16px",
+                borderRadius: "8px",
+                cursor: "pointer",
+                transition: "background-color 0.3s ease",
+                margin: "10px 5px",
+              }}
+              onMouseOver={(e) => (e.target.style.backgroundColor = "#574fcf")}
+              onMouseOut={(e) => (e.target.style.backgroundColor = "#6c63ff")}
+              onMouseDown={(e) => (e.target.style.backgroundColor = "#453abd")}
+              onMouseUp={(e) => (e.target.style.backgroundColor = "#574fcf")}
+            >
               Submit
             </button>
             <ReloadButton />

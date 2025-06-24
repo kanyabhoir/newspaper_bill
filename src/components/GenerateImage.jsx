@@ -185,7 +185,7 @@ const GenerateImage = ({
                 </div>
               </div>
               <div>
-                <section
+                {/* <section
                   style={{
                     backgroundColor: "#0056b3",
                     color: "#fff",
@@ -193,7 +193,16 @@ const GenerateImage = ({
                   }}
                 >
                   <h3>Our new service is live! Book a ride now!</h3>
-                </section>
+                </section> */}
+                <div style={{ background: "#fff" }}>
+                  <b style={{ color: "black" }}>Note :- </b>
+                  <span
+                    style={{ color: "red", fontWeight: "bold", fontSize: 17 }}
+                  >
+                    {""}Please send a screenshot of the payment proof via
+                    WhatsApp.{""}
+                  </span>
+                </div>
 
                 <PopupModal
                   isOpen={isModalOpen}
@@ -346,6 +355,7 @@ const GenerateImage = ({
                       {googlePay}
                     </p>
                   </div>
+
                   <div
                     style={{
                       display: "flex",
@@ -448,17 +458,52 @@ const GenerateImage = ({
               </div>
             </div>
           </div>
-          <div style={{ background: "#fff" }}>
-            <b>Note :- </b>
-            <span>
-              "Please send a screenshot of the payment proof via WhatsApp."
-            </span>
-          </div>
+        <div>
+          <span style={{color:"black",fontWeight:"bolder"}}>old news pepars</span>
+        </div>
         </div>
       </div>
       <div>
-        <button onClick={handleDownloadPng}>Download as PNG</button>
-        <button onClick={handleDownloadJpeg}>Download as JPEG</button>
+        <button
+          onClick={handleDownloadPng}
+          style={{
+            backgroundColor: "#6c63ff",
+            color: "white",
+            border: "none",
+            padding: "10px 20px",
+            fontSize: "16px",
+            borderRadius: "8px",
+            cursor: "pointer",
+            transition: "background-color 0.3s ease",
+            margin: "10px 5px",
+          }}
+          onMouseOver={(e) => (e.target.style.backgroundColor = "#574fcf")}
+          onMouseOut={(e) => (e.target.style.backgroundColor = "#6c63ff")}
+          onMouseDown={(e) => (e.target.style.backgroundColor = "#453abd")}
+          onMouseUp={(e) => (e.target.style.backgroundColor = "#574fcf")}
+        >
+          Download as PNG
+        </button>
+        <button
+          onClick={handleDownloadJpeg}
+          style={{
+            backgroundColor: "#6c63ff",
+            color: "white",
+            border: "none",
+            padding: "10px 20px",
+            fontSize: "16px",
+            borderRadius: "8px",
+            cursor: "pointer",
+            transition: "background-color 0.3s ease",
+            margin: "10px 5px",
+          }}
+          onMouseOver={(e) => (e.target.style.backgroundColor = "#574fcf")}
+          onMouseOut={(e) => (e.target.style.backgroundColor = "#6c63ff")}
+          onMouseDown={(e) => (e.target.style.backgroundColor = "#453abd")}
+          onMouseUp={(e) => (e.target.style.backgroundColor = "#574fcf")}
+        >
+          Download as JPEG
+        </button>
       </div>
     </div>
   );
