@@ -458,9 +458,11 @@ const GenerateImage = ({
               </div>
             </div>
           </div>
-        <div>
-          <span style={{color:"black",fontWeight:"bolder"}}>old news pepars</span>
-        </div>
+          <div>
+            <span style={{ color: "black", fontWeight: "bolder" }}>
+              "We accept old newspapers only on Saturdays and Sundays"
+            </span>
+          </div>
         </div>
       </div>
       <div>
