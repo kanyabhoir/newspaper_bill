@@ -9,6 +9,8 @@ import ReloadButton from "./ReloadButton";
 const newspaperOptions = [
   "नवभारत",
   "संध्यानंद",
+  "पुण्यनगरी",
+  "दिवाळी",
   "सामना",
   "आ.आनंद",
   "पुढारी",

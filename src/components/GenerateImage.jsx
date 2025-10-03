@@ -92,12 +92,42 @@ const GenerateImage = ({
                 >
                   Vijay News Paper Agency
                 </span>
+                <span
+                  style={{
+                    fontFamily:
+                      "math, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial",
+                    fontSize: 22,
+                    fontWeight: "700",
+                    textTransform: "uppercase",
+                    letterSpacing: "1px",
+                    display: "inline-block",
+                    padding: "8px 16px",
+                    borderRadius: 10,
+                    background: "linear-gradient(90deg, #ff8c42, #ffd700)",
+                    color: "#fff", // White text on strong colors
+                    textShadow: "0 2px 4px rgba(0,0,0,0.3)", // makes text readable on bright bg
+                  }}
+                >
+                  ✨🪔 Wishing You a Happy Diwali ✨🪔
+                </span>
+                {/* <span
+                  style={{
+                    fontFamily: "math",
+                    fontSize: 19,
+                    fontWeight: "bold",
+                    color: "#000",
+                    textTransform: "uppercase",
+                  }}
+                >
+                ✨🪔  Wishing You a Happy Diwali ✨🪔
+                </span> */}
               </div>
               <div
                 style={{
                   display: "flex",
                   flexDirection: "row-reverse",
                   justifyContent: "space-between",
+                  marginTop: 20,
                 }}
               >
                 <div
