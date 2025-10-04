@@ -6,59 +6,114 @@ import Select from "react-select";
 import { format } from "date-fns";
 import ReloadButton from "./ReloadButton";
 
-const newspaperOptions = [
-  "नवभारत",
-  "संध्यानंद",
-  "पुण्यनगरी",
-  "दिवाळी",
-  "सामना",
-  "आ.आनंद",
-  "पुढारी",
-  "साप्ताहिक",
-  "The Hindu",
-  "साक्षी",
-  "नवाकाळ",
-  "Mirror",
-  "A.B.P.",
-  "दिव्य भास्कर",
-  "मु. समाचार",
-  "तरुण भारत",
-  "दैनिक भास्कर",
-  "लोकमत",
-  "H.T.",
-  "सकाळ",
-  "delivery bill",
-  "F. Press",
-  "Eco",
-  "Magazine",
-  "Patrika",
-  "जन्मभूमी",
-  "महाराष्ट्र टाइम्स",
-  "लोकसत्ता",
-  "नवभारत टाइम्स",
-  "प्रत:काळ",
-  "Mint",
-  "finance",
-  "Indian Express",
-  "Wealth",
-  "मुंबई चौफेर",
-  "ठाणे वैभव",
-  "दिनकरनं",
-  "प्रत्यक्ष",
-  "गुजरात समाचार",
-  "Thanthi",
-  "Manorama",
-  "Mathrubhumi",
-  "Uday Vani",
-  "K. Mala",
-  "G. Mid day",
-  "E. Mid day",
-  "B. Standard",
-  "B. Line",
-  "Times",
-].map((name) => ({ label: name, value: name }));
+// const newspaperOptions = [
+//   "नवभारत",
+//   "संध्यानंद",
+//   "पुण्यनगरी",
+//   "दिवाळी",
+//   "सामना",
+//   "आ.आनंद",
+//   "पुढारी",
+//   "साप्ताहिक",
+//   "The Hindu",
+//   "साक्षी",
+//   "नवाकाळ",
+//   "Mirror",
+//   "A.B.P.",
+//   "दिव्य भास्कर",
+//   "मु. समाचार",
+//   "तरुण भारत",
+//   "दैनिक भास्कर",
+//   "लोकमत",
+//   "H.T.",
+//   "सकाळ",
+//   "delivery bill",
+//   "F. Press",
+//   "Eco",
+//   "Magazine",
+//   "Patrika",
+//   "जन्मभूमी",
+//   "महाराष्ट्र टाइम्स",
+//   "लोकसत्ता",
+//   "नवभारत टाइम्स",
+//   "प्रत:काळ",
+//   "Mint",
+//   "finance",
+//   "Indian Express",
+//   "Wealth",
+//   "मुंबई चौफेर",
+//   "ठाणे वैभव",
+//   "दिनकरनं",
+//   "प्रत्यक्ष",
+//   "गुजरात समाचार",
+//   "Thanthi",
+//   "Manorama",
+//   "Mathrubhumi",
+//   "Uday Vani",
+//   "K. Mala",
+//   "G. Mid day",
+//   "E. Mid day",
+//   "B. Standard",
+//   "B. Line",
+//   "Times",
+// ].map((name) => ({ label: name, value: name }));
 
 const BillTemplate = () => {
+  const [newspaperOptions, setNewspaperOptions] = useState(
+  [
+    "नवभारत",
+    "संध्यानंद",
+    "पुण्यनगरी",
+    "दिवाळी",
+    "सामना",
+    "आ.आनंद",
+    "पुढारी",
+    "साप्ताहिक",
+    "The Hindu",
+    "साक्षी",
+    "नवाकाळ",
+    "Mirror",
+    "A.B.P.",
+    "दिव्य भास्कर",
+    "मु. समाचार",
+    "तरुण भारत",
+    "दैनिक भास्कर",
+    "लोकमत",
+    "H.T.",
+    "सकाळ",
+    "delivery bill",
+    "F. Press",
+    "Eco",
+    "Magazine",
+    "Patrika",
+    "जन्मभूमी",
+    "महाराष्ट्र टाइम्स",
+    "लोकसत्ता",
+    "नवभारत टाइम्स",
+    "प्रत:काळ",
+    "Mint",
+    "finance",
+    "Indian Express",
+    "Wealth",
+    "मुंबई चौफेर",
+    "ठाणे वैभव",
+    "दिनकरनं",
+    "प्रत्यक्ष",
+    "गुजरात समाचार",
+    "Thanthi",
+    "Manorama",
+    "Mathrubhumi",
+    "Uday Vani",
+    "K. Mala",
+    "G. Mid day",
+    "E. Mid day",
+    "B. Standard",
+    "B. Line",
+    "Times",
+  ].map((name) => ({ label: name, value: name }))
+);
+  const [newPaperName, setNewPaperName] = useState("");
+  const [showModal, setShowModal] = useState(false);
   const [showSummary, setShowSummary] = useState(false);
   const [selectedNewspapers, setSelectedNewspapers] = useState([]);
   const [newspaperList, setNewspaperList] = useState([]);
@@ -68,6 +123,15 @@ const BillTemplate = () => {
     setSelectedNewspapers(selectedOptions || []);
   };
 
+  const handleAddNewspaper = () => {
+    if (newPaperName.trim() === "") return;
+
+    const newOption = { label: newPaperName, value: newPaperName };
+
+    setNewspaperOptions((prev) => [...prev, newOption]);
+    setNewPaperName("");
+    setShowModal(false);
+  };
   const [billData, setBillData] = useState({
     name: "",
     month: "",
@@ -121,8 +185,8 @@ const BillTemplate = () => {
   Month: ${billData.month}
   Date: ${formattedDate}
   Newspapers: ${newspaperList
-    .map((item) => item.newspapers.map((n) => n.label).join(", "))
-    .join("; ")}
+      .map((item) => item.newspapers.map((n) => n.label).join(", "))
+      .join("; ")}
   Total Amount: ${calculateTotal().toFixed(2)}
 `;
 
@@ -285,6 +349,7 @@ const BillTemplate = () => {
               Submit
             </button>
             <ReloadButton />
+         
           </form>
 
           {showSummary && (
@@ -296,6 +361,91 @@ const BillTemplate = () => {
               </div>
             </>
           )}
+        </div>
+        <div>
+
+             <button
+              style={{
+                marginTop: "12px",
+                padding: "8px 16px",
+                background: "#6c63ff",
+                color: "#fff",
+                border: "none",
+                borderRadius: "6px",
+                cursor: "pointer",
+              }}
+              onClick={() => setShowModal(true)}
+            >
+              + Add Newspaper
+            </button>
+            {showModal && (
+              <div
+                style={{
+                  position: "fixed",
+                  top: "0",
+                  left: "0",
+                  width: "100%",
+                  height: "100%",
+                  backgroundColor: "rgba(0,0,0,0.5)",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <div
+                  style={{
+                    background: "#fff",
+                    padding: "20px",
+                    borderRadius: "8px",
+                    width: "300px",
+                    textAlign: "center",
+                  }}
+                >
+                  <h3 style={{color:"#000"}}>Add New Newspaper Name</h3>
+                  <input
+                    type="text"
+                    value={newPaperName}
+                    onChange={(e) => setNewPaperName(e.target.value)}
+                    placeholder="Enter newspaper name"
+                    style={{
+                      width: "100%",
+                      padding: "8px",
+                      margin: "10px 0",
+                      border: "1px solid #ccc",
+                      borderRadius: "4px",
+                    }}
+                  />
+                  <div style={{ marginTop: "10px" }}>
+                    <button
+                      onClick={handleAddNewspaper}
+                      style={{
+                        padding: "6px 12px",
+                        marginRight: "8px",
+                        background: "#2563EB",
+                        color: "white",
+                        border: "none",
+                        borderRadius: "4px",
+                        cursor: "pointer",
+                      }}
+                    >
+                      Save
+                    </button>
+                    <button
+                      onClick={() => setShowModal(false)}
+                      style={{
+                        padding: "6px 12px",
+                        background: "#ccc",
+                        border: "none",
+                        borderRadius: "4px",
+                        cursor: "pointer",
+                      }}
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
         </div>
         <div style={{ marginTop: 20 }}>
           <GenerateImage
