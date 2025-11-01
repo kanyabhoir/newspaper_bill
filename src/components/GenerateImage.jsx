@@ -92,7 +92,7 @@ const GenerateImage = ({
                 >
                   Vijay News Paper Agency
                 </span>
-                <span
+                {/* <span
                   style={{
                     fontFamily:
                       "math, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial",
@@ -109,18 +109,8 @@ const GenerateImage = ({
                   }}
                 >
                   ✨🪔 Wishing You a Happy Diwali ✨🪔
-                </span>
-                {/* <span
-                  style={{
-                    fontFamily: "math",
-                    fontSize: 19,
-                    fontWeight: "bold",
-                    color: "#000",
-                    textTransform: "uppercase",
-                  }}
-                >
-                ✨🪔  Wishing You a Happy Diwali ✨🪔
                 </span> */}
+              
               </div>
               <div
                 style={{
