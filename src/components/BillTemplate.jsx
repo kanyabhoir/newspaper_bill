@@ -5,6 +5,9 @@ import GenerateImage from "./GenerateImage";
 import Select from "react-select";
 import { format } from "date-fns";
 import ReloadButton from "./ReloadButton";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import Toast from "./Toast";
 
 // const newspaperOptions = [
 //   "नवभारत",
@@ -118,6 +121,7 @@ const BillTemplate = () => {
   const [selectedNewspapers, setSelectedNewspapers] = useState([]);
   const [newspaperList, setNewspaperList] = useState([]);
   const [amount, setAmount] = useState("");
+  const [toast, setToast] = useState(null);
 
   const handleNewspaperChange = (selectedOptions) => {
     setSelectedNewspapers(selectedOptions || []);
@@ -131,6 +135,10 @@ const BillTemplate = () => {
     setNewspaperOptions((prev) => [...prev, newOption]);
     setNewPaperName("");
     setShowModal(false);
+    setToast({
+      message: `"${newPaperName}" added successfully!`,
+      type: "success",
+    });
   };
   const [billData, setBillData] = useState({
     name: "",
@@ -175,6 +183,15 @@ const BillTemplate = () => {
       ]);
       setSelectedNewspapers([]);
       setAmount("");
+      setToast({
+        message: "Bill submitted successfully!",
+        type: "success",
+      });
+    } else {
+      setToast({
+        message: "Please select newspapers and enter amount",
+        type: "warning",
+      });
     }
     setShowSummary(true);
   };
@@ -194,6 +211,13 @@ const BillTemplate = () => {
 
   return (
     <>
+      {toast && (
+        <Toast
+          message={toast.message}
+          type={toast.type}
+          onClose={() => setToast(null)}
+        />
+      )}
       <div>
         <div className="main-container">
           <h1 style={{ color: "#000000" }}>Vijay News Paper Agency</h1>
@@ -252,11 +276,23 @@ const BillTemplate = () => {
             <div className="row">
               <div className="column">
                 <label>Date: </label>
-                <input
-                  type="date"
-                  name="date"
-                  value={billData.date}
-                  onChange={handleInputChange}
+                <DatePicker
+                  selected={billData.date ? new Date(billData.date) : null}
+                  onChange={(date) =>
+                    setBillData((prev) => ({
+                      ...prev,
+                      date: date ? date.toISOString().split("T")[0] : "", // store as yyyy-mm-dd
+                    }))
+                  }
+                  placeholderText="Click to select date"
+                  dateFormat="dd/MM/yyyy"
+                  className="custom-date-input"
+                  popperPlacement="bottom-start"
+                  showPopperArrow={false}
+                  calendarStartDay={1}
+                  isClearable
+                  onFocus={(e) => e.target.blur()}
+                  autoComplete="off"
                 />
               </div>
 
@@ -447,7 +483,7 @@ const BillTemplate = () => {
               </div>
             )}
         </div>
-        <div style={{ marginTop: 20 }}>
+        <div style={{ marginTop: 20, display: "flex", justifyContent: "center", width: "100%", overflowX: "auto" }}>
           <GenerateImage
             name={billData.name}
             month={billData.month}

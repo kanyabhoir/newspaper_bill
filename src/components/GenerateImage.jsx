@@ -16,10 +16,21 @@ const GenerateImage = ({
   const [isModalOpen, setIsModalOpen] = useState(false);
   const handleDownloadPng = () => {
     const node = document.getElementById("image-content");
-    toPng(node)
+    const options = {
+      quality: 1.0,
+      pixelRatio: 2,
+      backgroundColor: "#d5dff0",
+      width: node.offsetWidth,
+      height: node.offsetHeight,
+      style: {
+        transform: "scale(1)",
+        transformOrigin: "top left",
+      },
+    };
+    toPng(node, options)
       .then((dataUrl) => {
         const link = document.createElement("a");
-        link.download = "download.png";
+        link.download = "bill-invoice.png";
         link.href = dataUrl;
         link.click();
       })
@@ -30,10 +41,21 @@ const GenerateImage = ({
 
   const handleDownloadJpeg = () => {
     const node = document.getElementById("image-content");
-    toJpeg(node, { quality: 0.95 })
+    const options = {
+      quality: 1.0,
+      pixelRatio: 2,
+      backgroundColor: "#d5dff0",
+      width: node.offsetWidth,
+      height: node.offsetHeight,
+      style: {
+        transform: "scale(1)",
+        transformOrigin: "top left",
+      },
+    };
+    toJpeg(node, options)
       .then((dataUrl) => {
         const link = document.createElement("a");
-        link.download = "download.jpeg";
+        link.download = "bill-invoice.jpeg";
         link.href = dataUrl;
         link.click();
       })
@@ -52,6 +74,10 @@ const GenerateImage = ({
           padding: 10,
           border: "2px solid rgb(212 208 208)",
           background: "#d5dff0",
+          width: "794px",
+          maxWidth: "794px",
+          minWidth: "794px",
+          boxSizing: "border-box",
         }}
         id="image-content"
       >
@@ -110,7 +136,6 @@ const GenerateImage = ({
                 >
                   ✨🪔 Wishing You a Happy Diwali ✨🪔
                 </span> */}
-              
               </div>
               <div
                 style={{
@@ -148,7 +173,7 @@ const GenerateImage = ({
                         color: "#000",
                       }}
                     >
-                      Contact No.{" "}
+                      Google pay / <br /> Phone Pay
                     </span>
                     <span
                       style={{
@@ -158,17 +183,7 @@ const GenerateImage = ({
                         marginTop: -5,
                       }}
                     >
-                      8850427013
-                    </span>
-                    <span
-                      style={{
-                        fontSize: 15,
-                        fontWeight: "700",
-                        color: "#000",
-                        marginTop: -5,
-                      }}
-                    >
-                      7262889526
+                      {googlePay}
                     </span>
                   </div>
                 </div>
@@ -359,7 +374,7 @@ const GenerateImage = ({
                         marginTop: 30,
                       }}
                     >
-                      Google pay / <br /> Phone Pay
+                      Contact No.
                     </span>
                     <p
                       style={{
@@ -372,7 +387,7 @@ const GenerateImage = ({
                         width: "100%",
                       }}
                     >
-                      {googlePay}
+                       8850427013 <br/> 7262889526
                     </p>
                   </div>
 

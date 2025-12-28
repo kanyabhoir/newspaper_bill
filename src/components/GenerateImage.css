@@ -1,7 +1,12 @@
 #image-content {
   padding: 10px;
   border: 2px solid rgb(212, 208, 208);
-  background: #cfd4de;
+  background: #d5dff0;
+  width: 794px;
+  max-width: 794px;
+  min-width: 794px;
+  box-sizing: border-box;
+  margin: 0 auto;
 }
 
 .image-content-inner {
