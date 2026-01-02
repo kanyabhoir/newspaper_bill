@@ -1,4 +1,75 @@
-#image-content {
+.invoice-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.invoice-scroll-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: visible;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: #6c63ff #f0f0f0;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.invoice-scroll-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.invoice-scroll-wrapper::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 4px;
+}
+
+.invoice-scroll-wrapper::-webkit-scrollbar-thumb {
+  background: #6c63ff;
+  border-radius: 4px;
+}
+
+.invoice-scroll-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #574fcf;
+}
+
+.download-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+/* Mobile and tablet optimizations */
+@media (max-width: 1024px) {
+  .invoice-scroll-wrapper {
+    padding: 10px;
+    -webkit-overflow-scrolling: touch;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .invoice-scroll-wrapper {
+    padding: 5px;
+    justify-content: flex-start;
+  }
+  
+  .download-buttons {
+    padding: 0 10px;
+  }
+  
+  .download-buttons button {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+ .image-content {
   padding: 10px;
   border: 2px solid rgb(212, 208, 208);
   background: #d5dff0;

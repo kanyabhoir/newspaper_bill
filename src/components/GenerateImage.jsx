@@ -3,6 +3,7 @@ import { toJpeg, toPng } from "html-to-image";
 import GooglePay from "./GooglePay";
 import PopupModal from "./PopupModal";
 import { useState } from "react";
+import "./GenerateImage.css";
 
 const GenerateImage = ({
   name,
@@ -68,19 +69,21 @@ const GenerateImage = ({
     setIsModalOpen(false);
   };
   return (
-    <div>
-      <div
-        style={{
-          padding: 10,
-          border: "2px solid rgb(212 208 208)",
-          background: "#d5dff0",
-          width: "794px",
-          maxWidth: "794px",
-          minWidth: "794px",
-          boxSizing: "border-box",
-        }}
-        id="image-content"
-      >
+    <div className="invoice-container">
+      <div className="invoice-scroll-wrapper">
+        <div
+          style={{
+            padding: 10,
+            border: "2px solid rgb(212 208 208)",
+            background: "#d5dff0",
+            width: "794px",
+            maxWidth: "794px",
+            minWidth: "794px",
+            boxSizing: "border-box",
+            flexShrink: 0,
+          }}
+          id="image-content"
+        >
         <div
           style={{
             padding: 10,
@@ -113,6 +116,7 @@ const GenerateImage = ({
                     fontSize: 40,
                     fontWeight: 600,
                     color: "#000",
+                    textAlign: "center",
                     textTransform: "uppercase",
                   }}
                 >
@@ -229,10 +233,10 @@ const GenerateImage = ({
                 >
                   <h3>Our new service is live! Book a ride now!</h3>
                 </section> */}
-                <div style={{ background: "#fff" }}>
-                  <b style={{ color: "black" }}>Note :- </b>
+                <div style={{ background: "#fff", textAlign: "center" }}>
+                  <b style={{ color: "black", textAlign: "center" }}>Note :- </b>
                   <span
-                    style={{ color: "red", fontWeight: "bold", fontSize: 17 }}
+                    style={{ color: "red", fontWeight: "bold", fontSize: 17, textAlign: "center" }}
                   >
                     {""}Please send a screenshot of the payment proof via
                     WhatsApp.{""}
@@ -293,10 +297,11 @@ const GenerateImage = ({
                 <span
                   style={{
                     fontSize: 16,
-                    marginLeft: 100,
                     fontWeight: "bold",
                     fontFamily: "sans-serif",
                     color: "#000",
+                    textAlign: "center",
+                    display: "block",
                   }}
                 >
                   Paper Name
@@ -316,10 +321,11 @@ const GenerateImage = ({
                 <span
                   style={{
                     fontSize: 16,
-                    marginRight: 10,
                     fontWeight: "bold",
                     fontFamily: "sans-serif",
                     color: "#000",
+                    textAlign: "center",
+                    display: "block",
                   }}
                 >
                   Amount
@@ -340,17 +346,15 @@ const GenerateImage = ({
                   justifyContent: "space-between",
                 }}
               >
-                {selectedNewspapers.length > 0 && (
                   <div>
                     <ul>
                       {selectedNewspapers.map((item, index) => (
-                        <h3 key={index}>
+                        <h3 key={index} style={{ textAlign: "center" }}>
                           {item.newspapers.map((n) => n.label).join(", ")}
                         </h3>
                       ))}
                     </ul>
                   </div>
-                )}
 
                 <div
                   style={{ display: "flex", justifyContent: "space-between" }}
@@ -456,7 +460,7 @@ const GenerateImage = ({
                     <div>
                       <ul>
                         {selectedNewspapers.map((item, index) => (
-                          <h3 key={index}>₹{item.amount}</h3>
+                          <h3 key={index} style={{ textAlign: "center" }}>₹{item.amount}</h3>
                         ))}
                       </ul>
                     </div>
@@ -467,10 +471,10 @@ const GenerateImage = ({
                   <p
                     style={{
                       fontSize: 16,
-                      marginRight: 10,
                       fontWeight: "bold",
                       fontFamily: "sans-serif",
                       color: "#000",
+                      textAlign: "center",
                     }}
                   >
                     {" "}
@@ -480,10 +484,10 @@ const GenerateImage = ({
                   <p
                     style={{
                       fontSize: 16,
-                      marginRight: 10,
                       fontWeight: "bold",
                       fontFamily: "sans-serif",
                       color: "#000",
+                      textAlign: "center",
                     }}
                   >
                     {" "}
@@ -500,7 +504,8 @@ const GenerateImage = ({
           </div>
         </div>
       </div>
-      <div>
+      </div>
+      <div className="download-buttons">
         <button
           onClick={handleDownloadPng}
           style={{
