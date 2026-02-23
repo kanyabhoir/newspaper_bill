@@ -284,7 +284,7 @@ const BillTemplate = () => {
               </div>
 
               <div className="column">
-                <label>Month: </label>
+                <label>Month:</label>
                 <select
                   name="month"
                   value={billData.month}

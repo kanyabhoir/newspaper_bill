@@ -138,7 +138,6 @@ const GenerateImage = ({
                     textShadow: "0 2px 4px rgba(0,0,0,0.3)", // makes text readable on bright bg
                   }}
                 >
-                  ✨🪔 Wishing You a Happy Diwali ✨🪔
                 </span> */}
               </div>
               <div
