@@ -5,9 +5,8 @@ import GenerateImage from "./GenerateImage";
 import Select from "react-select";
 import { format } from "date-fns";
 import ReloadButton from "./ReloadButton";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
 import Toast from "./Toast";
+import DatePicker from "react-datepicker";
 
 // const newspaperOptions = [
 //   "नवभारत",
@@ -143,7 +142,7 @@ const BillTemplate = () => {
   const [billData, setBillData] = useState({
     name: "",
     month: "",
-    date: "",
+    date: "", // Store as yyyy-mm-dd string for HTML5 date input
     googlePay: "8793274753",
     phonePay: "",
     balance: 0,
@@ -159,7 +158,7 @@ const BillTemplate = () => {
   };
 
   const formattedDate = billData.date
-    ? format(new Date(billData.date), "dd/MM/yyyy")
+    ? format(new Date(billData.date + "T00:00:00"), "dd/MM/yyyy")
     : "";
 
   const handleAmountChange = (e) => {
@@ -276,23 +275,11 @@ const BillTemplate = () => {
             <div className="row">
               <div className="column">
                 <label>Date: </label>
-                <DatePicker
-                  selected={billData.date ? new Date(billData.date) : null}
-                  onChange={(date) =>
-                    setBillData((prev) => ({
-                      ...prev,
-                      date: date ? date.toISOString().split("T")[0] : "", // store as yyyy-mm-dd
-                    }))
-                  }
-                  placeholderText="Click to select date"
-                  dateFormat="dd/MM/yyyy"
-                  className="custom-date-input"
-                  popperPlacement="bottom-start"
-                  showPopperArrow={false}
-                  calendarStartDay={1}
-                  isClearable
-                  onFocus={(e) => e.target.blur()}
-                  autoComplete="off"
+                <input
+                  type="date"
+                  name="date"
+                  value={billData.date}
+                  onChange={handleInputChange}
                 />
               </div>
 

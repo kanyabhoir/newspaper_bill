@@ -157,9 +157,9 @@ const GenerateImage = ({
                     gap: 10,
                   }}
                 >
-                  <div>
+                  {/* <div>
                     <GooglePay />
-                  </div>
+                  </div> */}
 
                   <div
                     style={{
